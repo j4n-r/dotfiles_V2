@@ -7,11 +7,16 @@ vim.g.have_nerd_font = true
 -- enable line numbers
 vim.opt.number = true
 
+-- toggle relatie line numbers
+vim.opt.relativenumber = true
+
 -- Sync clipboard between OS and Neovim.
 vim.opt.clipboard = "unnamedplus"
 
 vim.opt.breakindent = true
 
+-- 24 bit colors for notify.nvim
+vim.opt.termguicolors = true
 -- safe undo history
 vim.opt.undofile = true
 
@@ -91,6 +96,8 @@ vim.opt.rtp:prepend(lazypath)
 --- import plugins
 require("lazy").setup("plugins")
 
+-- set notify as standart
+vim.notify = require("notify")
 -- set colorscheme
 -- Set colorscheme after options
 vim.cmd("colorscheme flexoki-dark")
